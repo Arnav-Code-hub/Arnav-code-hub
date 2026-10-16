@@ -39,3 +39,19 @@ jobs:
           plugin_topics: yes
           plugin_topics_mode: icons
           plugin_topics_limit: 0
+
+          # Recent activity feed
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 14
+
+          # Lines of code added / removed
+          plugin_lines: yes
+
+          # Notable contributions (repos you've contributed to)
+          plugin_notable: yes
+
+          # Sekiro colours: crimson headings, gold icons
+          extras_css: |
+            h2, h2 a, h2.field, .field a { color: #E02424 !important; }
+            h2 svg, .field svg { fill: #C9A227 !important; }
