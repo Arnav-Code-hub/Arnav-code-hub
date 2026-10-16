@@ -19,11 +19,11 @@ jobs:
 
           # 3D contributions calendar
           plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
+          plugin_isocalendar_duration: half-year
 
           # Coding habits (commits per hour / per day)
           plugin_habits: yes
-          plugin_habits_charts: yes
+          plugin_habits_charts: no
           plugin_habits_days: 14
 
           # Most used languages
