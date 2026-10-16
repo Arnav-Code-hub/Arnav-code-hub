@@ -10,10 +10,6 @@
   <img src="https://streak-stats.demolab.com?user=Arnav-Code-hub&background=000000&border=00FF41&ring=00FF41&fire=00FF41&currStreakNum=00FF41&sideNums=00FF41&currStreakLabel=00FF41&sideLabels=00FF41&dates=008F11&stroke=003B00" />
 </p>
 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=Arnav-Code-hub&theme=matrix&no-frame=true&row=1&column=6" />
-</p>
-
 ![Metrics](/github-metrics.svg)
 
 <p align="center">
