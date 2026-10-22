@@ -1,43 +1,48 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=slice&color=0:000000,100:8B0000&height=200&section=header&text=Arnav%20Agarwal&fontColor=C9A227&fontSize=52&desc=Shinobi%20of%20Code&descAlignY=72&animation=fadeIn" />
+  <img src="./assets/hero.svg" width="100%" alt="Arnav Agarwal — Shinobi of Code" />
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Shippori+Mincho&weight=700&size=24&pause=1200&color=B22222&center=true&vCenter=true&width=650&lines=Hesitation+is+defeat.;A+shinobi+never+stops+committing.;Kotlin+%7C+TypeScript+%7C+Python+%7C+C;Sharpen+the+blade.+Ship+the+code." />
+  <img src="https://readme-typing-svg.demolab.com?font=Cinzel&weight=600&size=20&duration=3500&pause=1200&color=C8432F&center=true&vCenter=true&width=700&lines=Building+apps+with+Kotlin+and+TypeScript;Solving+problems+in+C+and+Python;One+commit+at+a+time." alt="Typing intro" />
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Arnav-Code-hub&color=8b0000&style=for-the-badge&label=SHINOBI+SIGHTINGS" />
-  <a href="https://github.com/Arnav-Code-hub?tab=followers"><img src="https://img.shields.io/github/followers/Arnav-Code-hub?style=for-the-badge&logo=github&logoColor=C9A227&label=ALLIES&color=8B0000" /></a>
+  <img src="https://komarev.com/ghpvc/?username=Arnav-Code-hub&color=b3261e&style=flat-square&label=VISITORS" />
+  <a href="https://github.com/Arnav-Code-hub?tab=followers"><img src="https://img.shields.io/github/followers/Arnav-Code-hub?style=flat-square&logo=github&logoColor=E6DCCB&label=FOLLOWERS&color=B3261E" /></a>
 </p>
 
-## 🗡️ The Shinobi's Scroll
+<p align="center"><img src="./assets/divider.svg" width="100%" /></p>
 
-- ⚔️ **Path:** building apps and websites, one commit at a time
-- 🏯 **Training in:** Android with Kotlin, web with TypeScript, problem solving in C and Python
-- 🔥 **Current quest:** leveling up my projects and keeping the streak alive
-- 🩸 **Creed:** *Hesitation is defeat.* Ship it, learn, repeat.
-
-## 🏹 Arsenal
+<h3 align="center">THE PATH</h3>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=kotlin,ts,js,html,css,py,c,git,github,androidstudio,vscode&theme=dark&perline=11" />
-</p>
-
-## 🔥 Battle Record
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=Arnav-Code-hub&background=0D0D0D&border=8B0000&ring=B22222&fire=C9A227&currStreakNum=C9A227&sideNums=C9A227&currStreakLabel=E02424&sideLabels=E02424&dates=8B6F2A&stroke=3B0A0A" />
-</p>
-
-![Metrics](/github-metrics.svg)
-
-## 🐍 The Serpent Devours My Commits
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Arnav-Code-hub/Arnav-code-hub/output/snake-sekiro.svg" />
+  I build Android apps with Kotlin and websites with TypeScript,<br/>
+  and sharpen my fundamentals with C and Python.<br/>
+  <i>Currently training: better projects, cleaner code, and an unbroken streak.</i>
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=slice&color=0:8B0000,100:000000&height=120&section=footer&reversal=true" />
+  <img src="https://skillicons.dev/icons?i=kotlin,ts,js,html,css,py,c,git,github,androidstudio,vscode&theme=dark&perline=11" alt="Skills" />
+</p>
+
+<p align="center"><img src="./assets/divider.svg" width="100%" /></p>
+
+<h3 align="center">BATTLE RECORD</h3>
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=Arnav-Code-hub&hide_border=true&border_radius=14&background=E6DCCB&ring=B3261E&fire=B3261E&currStreakNum=1B1714&sideNums=1B1714&currStreakLabel=A8261C&sideLabels=A8261C&dates=6B5F50&stroke=C9BBA5" alt="Streak" />
+</p>
+
+<p align="center">
+  <img src="./github-metrics.svg" alt="Metrics" />
+</p>
+
+<p align="center"><img src="./assets/divider.svg" width="100%" /></p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Arnav-Code-hub/Arnav-code-hub/output/snake-sekiro.svg" alt="Snake eating contributions" />
+</p>
+
+<p align="center">
+  <img src="./assets/footer.svg" width="100%" alt="Hesitation is defeat" />
 </p>
