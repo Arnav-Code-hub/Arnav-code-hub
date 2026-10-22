@@ -1193,28 +1193,127 @@ function entries(list, gold = false) {
   return svgDoc(W, list.length * (h + gap) - gap + 4, body);
 }
 
+// ---------- a realistic crow, built feather by feather ----------
+// One feather lying along +x from its base at the origin
+const feather = (len, w, angle, x = 0, y = 0, fill = "url(#fthr)") => {
+  const d = `M0 ${-w / 2} C${len * 0.3} ${-w / 2} ${len * 0.82} ${-w * 0.42} ${len} 0 C${len * 0.82} ${w * 0.42} ${len * 0.3} ${w / 2} 0 ${w / 2}Z`;
+  return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${angle.toFixed(1)})"><path d="${d}" fill="${fill}" stroke="#05050a" stroke-width="0.5"/><path d="M1 0 L${(len * 0.92).toFixed(1)} 0" stroke="#3b4050" stroke-width="0.6" opacity="0.8"/></g>`;
+};
+// The wing is drawn raised: the arm runs from the shoulder (origin) up and back to the wrist
+const WRIST = [-24, -38];
+const crowWingArm = () => {
+  let out = "";
+  // secondaries along the trailing edge of the arm
+  for (let i = 0; i < 10; i++) {
+    const t = 0.12 + i * 0.09;
+    out += feather(34 - i * 0.6, 8.5, -168 + i * 2.2, WRIST[0] * t, WRIST[1] * t + 2);
+  }
+  // coverts layered over the arm
+  for (let i = 0; i < 9; i++) {
+    const t = 0.08 + i * 0.1;
+    out += feather(18, 7, -160 + i * 2, WRIST[0] * t + 2, WRIST[1] * t, "url(#fthrCov)");
+  }
+  for (let i = 0; i < 8; i++) {
+    const t = 0.1 + i * 0.11;
+    out += feather(10, 6, -150, WRIST[0] * t + 4, WRIST[1] * t - 1, "url(#fthrCov)");
+  }
+  return `<path d="M2 2 L${WRIST[0]} ${WRIST[1]}" stroke="#0c0c11" stroke-width="5" stroke-linecap="round"/>` + out;
+};
+const crowWingHand = () => {
+  let out = "";
+  // primaries fan out from the wrist, separated at the tips like fingers
+  for (let i = 0; i < 7; i++) out += feather(46 + i * 2.6, 8 - i * 0.25, -108 - i * 10, 0, 0);
+  // primary coverts
+  for (let i = 0; i < 6; i++) out += feather(20, 7, -112 - i * 10, 1, 0, "url(#fthrCov)");
+  return out + `<circle r="4" fill="#101016"/>`;
+};
+const crowWing = (armVals, handVals, keyTimes, splines, dur, scale, opacity) => `
+  <g opacity="${opacity}">
+    <animateTransform attributeName="transform" type="rotate" values="${armVals}" keyTimes="${keyTimes}" calcMode="spline" keySplines="${splines}" dur="${dur}s" repeatCount="indefinite"/>
+    <g transform="scale(${scale})">
+      <g transform="translate(${WRIST[0]} ${WRIST[1]})">
+        <g>
+          <animateTransform attributeName="transform" type="rotate" values="${handVals}" keyTimes="${keyTimes}" calcMode="spline" keySplines="${splines}" dur="${dur}s" repeatCount="indefinite"/>
+          ${crowWingHand()}
+        </g>
+      </g>
+      ${crowWingArm()}
+    </g>
+  </g>`;
+
+function crow() {
+  const kt = "0;0.42;1", sp = "0.55 0 0.75 1;0.3 0 0.5 1", dur = 0.95;
+  const tail = Array.from({ length: 11 }, (_, i) => feather(46 - Math.abs(i - 5) * 1.6, 9, 180 - 26 + i * 5.2, -42, 3)).join("");
+  // small scale-like feather texture over the body
+  const texture = [];
+  for (let r = 0; r < 3; r++) for (let c = 0; c < 7; c++) {
+    const x = -30 + c * 10 + (r % 2) * 5, y = -10 + r * 7;
+    texture.push(`<path d="M${x - 4} ${y} Q${x} ${y + 4} ${x + 4} ${y}" stroke="#2a2d3c" stroke-width="0.7" fill="none" opacity="0.35"/>`);
+  }
+  return `
+      <!-- far wing, deeper in shadow -->
+      <g transform="translate(4 -12)">${crowWing("38 0 0;-96 0 0;38 0 0", "8 0 0;-18 0 0;8 0 0", kt, sp, dur, 0.92, 0.55)}</g>
+      <!-- tail -->
+      ${tail}
+      <!-- body -->
+      <path d="M-46 2 C-34 -14 -6 -20 20 -18 C36 -16 48 -10 54 -2 C46 8 24 16 -2 16 C-22 16 -38 10 -46 2Z" fill="url(#crowBody)"/>
+      <path d="M-40 -2 C-24 -14 0 -18 24 -15" stroke="url(#sheen)" stroke-width="5" fill="none" opacity="0.45"/>
+      ${texture.join("")}
+      <!-- legs and talons gripping the scroll -->
+      <g stroke="#15151a" stroke-linecap="round" fill="none">
+        <path d="M6 12 L10 28" stroke-width="3"/><path d="M20 12 L26 28" stroke-width="3"/>
+        <path d="M10 28 L5 33 M10 28 L10 34 M10 28 L15 32 M26 28 L21 33 M26 28 L26 34 M26 28 L31 32" stroke-width="1.8"/>
+      </g>
+      <g transform="translate(18 37) rotate(-6)">
+        <rect x="-22" y="-6" width="44" height="12" rx="6" fill="#efe6d6" stroke="#1b1714" stroke-width="1.4"/>
+        <rect x="-26" y="-7" width="5" height="14" rx="2" fill="#3a2414"/><rect x="21" y="-7" width="5" height="14" rx="2" fill="#3a2414"/>
+        <circle r="4.5" fill="#b3261e"/>
+        <path fill="#b3261e"><animate attributeName="d" dur="0.7s" repeatCount="indefinite" values="M-2 4 C-6 12 -14 16 -22 16 C-14 20 -6 16 1 6Z;M-2 4 C-8 10 -16 10 -24 8 C-16 16 -6 14 1 6Z;M-2 4 C-6 12 -14 16 -22 16 C-14 20 -6 16 1 6Z"/></path>
+      </g>
+      <!-- head -->
+      <path d="M40 -10 C44 -24 62 -28 72 -20 C78 -15 79 -8 75 -2 C67 4 50 3 42 -2Z" fill="url(#crowBody)"/>
+      <path d="M46 -18 C54 -25 66 -25 72 -19" stroke="url(#sheen)" stroke-width="3" fill="none" opacity="0.5"/>
+      <!-- heavy beak with bristles at the base -->
+      <path d="M71 -17 C80 -18 93 -14 102 -6 C93 -5 82 -6 72 -6Z" fill="url(#beak)"/>
+      <path d="M72 -6 C82 -6 93 -5 100 -5 C92 -1 81 0 71 -1Z" fill="#141418"/>
+      <path d="M73 -13 C82 -14 92 -11 99 -7" stroke="#55565e" stroke-width="0.8" fill="none" opacity="0.7"/>
+      <g stroke="#0c0c10" stroke-width="0.9" stroke-linecap="round">
+        <path d="M70 -15 L78 -15.5"/><path d="M70 -13 L79 -12.5"/><path d="M70 -11 L77 -10"/>
+      </g>
+      <!-- eye: dark, glossy, with a highlight -->
+      <circle cx="65" cy="-15" r="3" fill="#2a2a30"/>
+      <circle cx="65" cy="-15" r="2.2" fill="#070708"/>
+      <circle cx="65.9" cy="-15.9" r="0.8" fill="#fff"/>
+      <!-- near wing -->
+      <g transform="translate(6 -13)">${crowWing("46 0 0;-108 0 0;46 0 0", "12 0 0;-24 0 0;12 0 0", kt, sp, dur, 1.06, 1)}</g>`;
+}
+
 // ---------- SEND A CROW: contact card ----------
 function contact() {
   const W = 1200, H = 210;
+  const eyeDef = `<filter id="eyeG" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="1.6"/></filter>
+    <linearGradient id="fthr" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#08080c"/><stop offset="0.7" stop-color="#16171e"/><stop offset="1" stop-color="#22242e"/></linearGradient>
+    <linearGradient id="fthrCov" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0a0a0f"/><stop offset="1" stop-color="#1c1e2a"/></linearGradient>
+    <linearGradient id="crowBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1a1c26"/><stop offset="0.5" stop-color="#0c0c12"/><stop offset="1" stop-color="#050507"/></linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#3b4a9a"/><stop offset="0.5" stop-color="#6a4a9a"/><stop offset="1" stop-color="#2a6a8a"/></linearGradient>
+    <linearGradient id="beak" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3b42"/><stop offset="1" stop-color="#121216"/></linearGradient>`;
   const c = profile.contact;
   const handles = c.links.map((l) => `${l.kind.toUpperCase()}  ${l.label}`).join("   ·   ");
   const body = `${card(1, 1, W - 2, H - 2)}
+    <!-- Wind streaks behind the crow -->
+    <g stroke="#6b5f50" stroke-width="1.6" stroke-linecap="round" opacity="0.5">
+      ${[[40, 96, 70], [26, 122, 54], [52, 146, 40]].map(([x, y, l], i) => `<line x1="${x}" y1="${y}" x2="${x + l}" y2="${y}"><animate attributeName="opacity" values="0;1;0" dur="${1.2 + i * 0.3}s" begin="${-i * 0.4}s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="20 0;-20 0" dur="${1.2 + i * 0.3}s" begin="${-i * 0.4}s" repeatCount="indefinite"/></line>`).join("")}
+    </g>
+    <!-- The messenger crow, flying right with a sealed scroll in its talons -->
     <g>
-      <animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="2.4s" repeatCount="indefinite"/>
-      <g transform="translate(60 40)">
-        <path fill="#1b1714">
-          <animate attributeName="d" dur="0.7s" repeatCount="indefinite" values="M20 70 C40 40 70 30 96 36 L60 10 C90 14 112 26 124 42 L150 34 L138 50 C150 56 158 66 158 74 C140 68 126 70 114 78 L104 96 L98 80 C80 84 50 82 20 70Z;M20 70 C40 56 70 46 96 46 L70 70 C96 70 112 60 124 50 L150 40 L138 56 C150 62 158 70 158 78 C140 72 126 74 114 82 L104 100 L98 84 C80 88 50 86 20 70Z;M20 70 C40 40 70 30 96 36 L60 10 C90 14 112 26 124 42 L150 34 L138 50 C150 56 158 66 158 74 C140 68 126 70 114 78 L104 96 L98 80 C80 84 50 82 20 70Z"/>
-        </path>
-        <circle cx="140" cy="48" r="2.6" fill="#ff8a2a"/>
-        <rect x="86" y="86" width="34" height="16" rx="3" fill="#efe6d6" stroke="#1b1714" stroke-width="1.6" transform="rotate(-10 103 94)"/>
-        <rect x="98" y="88" width="10" height="10" fill="#b3261e" transform="rotate(-10 103 93)"/>
-      </g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="0.95s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
+      <g transform="translate(170 122) scale(0.95)">${crow()}</g>
     </g>
     <text x="300" y="82" ${T_SERIF} font-size="34" font-weight="700" letter-spacing="6" fill="#1b1714">SEND A CROW</text>
     <text x="300" y="116" ${T_SERIF} font-size="17" fill="#3a302a">${esc(c.message)}</text>
     <text x="300" y="150" ${T_SERIF} font-size="14" letter-spacing="2" fill="#a3241b">${esc(handles)}</text>
     ${Array.from({ length: 4 }, (_, i) => `<g transform="translate(${1060 + i * 30} ${50 + (i % 2) * 30})"><path d="${petal(12)}" fill="${i % 2 ? "#c24a62" : "#e88a9c"}"><animateTransform attributeName="transform" type="rotate" values="0 6 0;30 6 0;0 6 0" dur="${3 + i}s" repeatCount="indefinite"/></path></g>`).join("")}`;
-  return svgDoc(W, H, body);
+  return svgDoc(W, H, body, eyeDef);
 }
 
 // Small link button (the README wraps it in a link)
