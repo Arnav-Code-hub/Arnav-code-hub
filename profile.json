@@ -1,0 +1,182 @@
+{
+  "name": {
+    "first": "ARNAV",
+    "last": "AGARWAL"
+  },
+  "role": "SOFTWARE DEVELOPER",
+  "stack": [
+    "KOTLIN",
+    "TYPESCRIPT",
+    "PYTHON",
+    "C"
+  ],
+  "quote": "Hesitation is defeat.",
+  "stats": {
+    "commits": 115,
+    "repos": 9
+  },
+  "origin": {
+    "bio": "I build Android apps and modern web experiences, from an encrypted safety vault in Kotlin to a 3D outfit recommender in Next.js. Right now I'm an app development intern, and I sharpen my fundamentals with DSA in C, one problem at a time.",
+    "table": [
+      {
+        "label": "Class",
+        "value": "Software Developer · Android & Web"
+      },
+      {
+        "label": "Guild",
+        "value": "Information Technology, Vishwakarma Institute of Technology (VIT), Pune · 2025 – 2029"
+      },
+      {
+        "label": "Current quests",
+        "value": "App Development Intern @ Cresedence Consultancies · DSA in C"
+      },
+      {
+        "label": "Core CS",
+        "value": "Data Structures & Algorithms"
+      },
+      {
+        "label": "Home",
+        "value": "Pune, India"
+      }
+    ]
+  },
+  "tools": [
+    {
+      "title": "LANGUAGES",
+      "sub": "MORTAL BLADE",
+      "icon": "blade",
+      "items": [
+        "KOTLIN",
+        "TYPESCRIPT",
+        "JAVASCRIPT",
+        "PYTHON",
+        "C",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "title": "WEB",
+      "sub": "LOADED SPEAR",
+      "icon": "spear",
+      "items": [
+        "NEXT.JS",
+        "REACT",
+        "TAILWIND CSS",
+        "THREE.JS",
+        "FRAMER MOTION"
+      ]
+    },
+    {
+      "title": "MOBILE",
+      "sub": "SHURIKEN WHEEL",
+      "icon": "shuriken",
+      "items": [
+        "ANDROID",
+        "JETPACK COMPOSE",
+        "ANDROID KEYSTORE",
+        "LEAFLET"
+      ]
+    },
+    {
+      "title": "CRAFT",
+      "sub": "FLAME VENT",
+      "icon": "flame",
+      "items": [
+        "DSA",
+        "GIT",
+        "GITHUB",
+        "GITHUB ACTIONS"
+      ]
+    }
+  ],
+  "dojo": {
+    "terminal": [
+      "> whoami",
+      "arnav · vit pune · it '29",
+      "> status",
+      "app dev intern @ cresedence",
+      "> git push",
+      "★ quest complete"
+    ]
+  },
+  "path": [
+    {
+      "title": "CRESEDENCE CONSULTANCIES",
+      "role": "App Development Intern",
+      "when": "NOW",
+      "status": "NOW PLAYING",
+      "desc": "Building apps as an app development intern.",
+      "icon": "star"
+    },
+    {
+      "title": "SMART INDIA HACKATHON",
+      "role": "Chatbot Developer · Phone Interface",
+      "when": "SIH",
+      "status": "HACKATHON",
+      "desc": "Developed the chatbot for my team's phone interface.",
+      "icon": "banner"
+    }
+  ],
+  "honors": [
+    {
+      "title": "WEBVERSE HACKATHON",
+      "sub": "2nd Place · Modern College",
+      "when": "2ND",
+      "desc": "Placed second at the Webverse hackathon organised by Modern College.",
+      "icon": "seal"
+    }
+  ],
+  "contact": {
+    "message": "Open to internships, collaborations and hackathons.",
+    "links": [
+      {
+        "kind": "github",
+        "label": "@Arnav-Code-hub",
+        "url": "https://github.com/Arnav-Code-hub"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "origin",
+      "title": "ORIGIN",
+      "tag": "WHO I AM"
+    },
+    {
+      "id": "tools",
+      "title": "PROSTHETIC TOOLS",
+      "tag": "TOOLS OF THE TRADE"
+    },
+    {
+      "id": "dojo",
+      "title": "THE DOJO",
+      "tag": "WHERE I BUILD"
+    },
+    {
+      "id": "warmap",
+      "title": "WAR MAP",
+      "tag": "LIVE FROM GITHUB"
+    },
+    {
+      "id": "record",
+      "title": "BATTLE RECORD",
+      "tag": "ACTIVITY READOUT"
+    },
+    {
+      "id": "path",
+      "title": "THE PATH",
+      "tag": "WHERE I'VE BEEN"
+    },
+    {
+      "id": "honors",
+      "title": "HONORS",
+      "tag": "WALL OF VICTORIES"
+    },
+    {
+      "id": "contact",
+      "title": "SEND A CROW",
+      "tag": "REACH OUT"
+    }
+  ]
+}
