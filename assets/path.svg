@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 256" width="1200" height="256">
+  <defs>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="7" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0.33  0 0 0 0 0.26  0 0 0 0 0.18  0.9 0 0 0 -0.32"/>
+    </filter>
+    <filter id="stain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="13"/>
+      <feColorMatrix values="0 0 0 0 0.42  0 0 0 0 0.33  0 0 0 0 0.23  1.4 0 0 0 -0.62"/>
+    </filter>
+    <filter id="ink" x="-10%" y="-40%" width="120%" height="180%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="3" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="inkFine" x="-5%" y="-20%" width="110%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3"/></filter>
+    <linearGradient id="pc" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ece3d2"/><stop offset="1" stop-color="#d6c9b2"/></linearGradient>
+    <radialGradient id="pcShade" cx="0.5" cy="0.5" r="0.75"><stop offset="0.6" stop-color="#3e2f20" stop-opacity="0"/><stop offset="1" stop-color="#3e2f20" stop-opacity="0.35"/></radialGradient>
+    <style>
+      .pop { opacity: 0; animation: pop .5s ease-out forwards; }
+      @keyframes pop { from { opacity: 0; transform: translateY(6px) } to { opacity: 1; transform: none } }
+      
+    </style>
+  </defs>
+<g class="pop" style="animation-delay:0.00s">
+    <rect x="1" y="1" width="1198" height="116" rx="10" fill="url(#pc)"/>
+    <rect x="1" y="1" width="1198" height="116" rx="10" filter="url(#grain)" opacity="0.45"/>
+    <rect x="1" y="1" width="1198" height="116" rx="10" fill="url(#pcShade)"/>
+    <rect x="2" y="2" width="1196" height="114" rx="9" fill="none" stroke="#3a2a1e" stroke-width="2"/>
+      <rect x="24" y="22" width="72" height="72" rx="8" fill="#efe6d6" stroke="#1b1714" stroke-width="2"/>
+      <g transform="translate(36 34) scale(1.2)"><path d="M20 4 L24 15 L36 15 L26 22 L30 34 L20 27 L10 34 L14 22 L4 15 L16 15Z" fill="#c9a227" stroke="#1b1714" stroke-width="1.4"/></g>
+      <text x="120" y="50" font-family="Georgia,'Times New Roman',serif" font-size="24" font-weight="700" letter-spacing="3" fill="#1b1714">CRESEDENCE CONSULTANCIES</text>
+      <text x="120" y="74" font-family="Georgia,'Times New Roman',serif" font-size="15" letter-spacing="1" fill="#6b4a2f">App Development Intern</text>
+      <text x="120" y="98" font-family="Georgia,'Times New Roman',serif" font-size="14" font-style="italic" fill="#3a302a">Building apps as an app development intern.</text>
+      <g>
+        <animate attributeName="opacity" values="1;0.55;1" dur="1.6s" repeatCount="indefinite"/>
+        <rect x="1032" y="26" width="144" height="28" fill="#a3241b" stroke="none" stroke-width="1.5" filter="url(#inkFine)"/>
+        <text x="1104" y="45" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="13" letter-spacing="3" fill="#efe6d6">NOW PLAYING</text>
+      </g>
+    </g><g class="pop" style="animation-delay:0.15s">
+    <rect x="1" y="135" width="1198" height="116" rx="10" fill="url(#pc)"/>
+    <rect x="1" y="135" width="1198" height="116" rx="10" filter="url(#grain)" opacity="0.45"/>
+    <rect x="1" y="135" width="1198" height="116" rx="10" fill="url(#pcShade)"/>
+    <rect x="2" y="136" width="1196" height="114" rx="9" fill="none" stroke="#3a2a1e" stroke-width="2"/>
+      <rect x="24" y="156" width="72" height="72" rx="8" fill="#efe6d6" stroke="#1b1714" stroke-width="2"/>
+      <g transform="translate(36 168) scale(1.2)"><path d="M10 4 L10 38" stroke="#1b1714" stroke-width="3"/><path d="M11 6 L34 6 L28 14 L34 22 L11 22Z" fill="#a3241b" stroke="#1b1714" stroke-width="1.4"><animate attributeName="d" dur="1.6s" repeatCount="indefinite" values="M11 6 L34 6 L28 14 L34 22 L11 22Z;M11 6 L32 8 L27 15 L34 21 L11 22Z;M11 6 L34 6 L28 14 L34 22 L11 22Z"/></path></g>
+      <text x="120" y="184" font-family="Georgia,'Times New Roman',serif" font-size="24" font-weight="700" letter-spacing="3" fill="#1b1714">SMART INDIA HACKATHON</text>
+      <text x="120" y="208" font-family="Georgia,'Times New Roman',serif" font-size="15" letter-spacing="1" fill="#6b4a2f">Chatbot Developer · Phone Interface</text>
+      <text x="120" y="232" font-family="Georgia,'Times New Roman',serif" font-size="14" font-style="italic" fill="#3a302a">Developed the chatbot for my team's phone interface.</text>
+      <g>
+        
+        <rect x="1053" y="160" width="123" height="28" fill="#a3241b" stroke="none" stroke-width="1.5" filter="url(#inkFine)"/>
+        <text x="1114.5" y="179" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="13" letter-spacing="3" fill="#efe6d6">HACKATHON</text>
+      </g>
+    </g>
+</svg>

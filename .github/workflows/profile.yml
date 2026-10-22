@@ -1,0 +1,31 @@
+name: Profile
+on:
+  schedule: [{cron: "30 0 * * *"}]   # redraw once a day
+  workflow_dispatch:                   # adds a manual "Run workflow" button
+  push:
+    branches: [main]
+    paths: ["profile.json", "scripts/**", "templates/**", "assets/avatar.jpg"]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Sync contribution data
+        run: node scripts/sync.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
+          GH_LOGIN: ${{ github.repository_owner }}
+      - name: Redraw profile images and README
+        run: node scripts/generate.mjs
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A assets data README.md
+          git diff --cached --quiet || git commit -m "Redraw profile [skip ci]"
+          git push
