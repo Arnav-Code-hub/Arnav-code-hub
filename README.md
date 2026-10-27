@@ -55,7 +55,7 @@ I build Android apps and modern web experiences, from an encrypted safety vault 
 </p>
 
 <p align="center">
-  <img src="./assets/warmap.svg" alt="Contribution calendar: 231 contributions in the last year" width="100%"/>
+  <img src="./assets/warmap.svg" alt="Contribution calendar: 233 contributions in the last year" width="100%"/>
 </p>
 
 <p align="center">
@@ -63,7 +63,7 @@ I build Android apps and modern web experiences, from an encrypted safety vault 
 </p>
 
 <p align="center">
-  <img src="./assets/record.svg" alt="231 contributions, 45 active days, best day 18, longest streak 11" width="100%"/>
+  <img src="./assets/record.svg" alt="233 contributions, 46 active days, best day 18, longest streak 11" width="100%"/>
 </p>
 
 > The war map and battle record are drawn from the real contribution calendar by `scripts/sync.mjs` and redrawn every day by a scheduled workflow.
