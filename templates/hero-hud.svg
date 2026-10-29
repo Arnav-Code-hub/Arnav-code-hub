@@ -72,20 +72,6 @@
 
     <image id="portraitImg" x="730" y="0" width="470" height="470" preserveAspectRatio="xMidYMid slice"
            href="data:image/jpeg;base64,{{AVATAR}}" xlink:href="data:image/jpeg;base64,{{AVATAR}}"/>
-    <filter id="wind" x="730" y="0" width="470" height="470" filterUnits="userSpaceOnUse">
-      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.035" numOctaves="2" seed="2" result="n">
-        <animate attributeName="baseFrequency" values="0.012 0.035;0.016 0.043;0.012 0.035" dur="4s" repeatCount="indefinite"/>
-      </feTurbulence>
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-    <filter id="maskBlur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="14"/></filter>
-    <mask id="windMask" maskUnits="userSpaceOnUse" x="700" y="0" width="500" height="470">
-      <g fill="#fff" filter="url(#maskBlur)">
-        <ellipse cx="965" cy="88" rx="150" ry="62"/>
-        <ellipse cx="1140" cy="330" rx="66" ry="140"/>
-        <ellipse cx="830" cy="410" rx="90" ry="56"/>
-      </g>
-    </mask>
     <filter id="glowBlur" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2.2"/></filter>
     <radialGradient id="eyeGlow">
       <stop offset="0" stop-color="#ffc4a2"/>
@@ -241,11 +227,16 @@
     </g>
 
     <!-- ===== Portrait (animated) ===== -->
-    <g class="breathe">
+    <g>
       <g mask="url(#portraitFade)">
         <use href="#portraitImg" xlink:href="#portraitImg"/>
-        <!-- Wind rippling through the hair and tattered cloth -->
-        <use href="#portraitImg" xlink:href="#portraitImg" filter="url(#wind)" mask="url(#windMask)"/>
+      </g>
+      <!-- Tattered cloth strips stirring in the wind (cheap: two small paths, no filters) -->
+      <g fill="#1b1612" opacity="0.92">
+        <path><animate attributeName="d" dur="2.6s" repeatCount="indefinite" values="M1168 214 L1176 214 Q1178 250 1170 286 Q1164 306 1150 318 Q1160 296 1162 276 Q1166 246 1168 214Z;M1168 214 L1176 214 Q1174 252 1162 284 Q1154 302 1138 310 Q1150 292 1154 274 Q1162 246 1168 214Z;M1168 214 L1176 214 Q1178 250 1170 286 Q1164 306 1150 318 Q1160 296 1162 276 Q1166 246 1168 214Z"/></path>
+      </g>
+      <g fill="#7a1810" opacity="0.9">
+        <path><animate attributeName="d" dur="2.2s" repeatCount="indefinite" values="M1184 232 L1189 232 Q1190 260 1182 284 Q1176 298 1164 304 Q1174 288 1177 272 Q1182 254 1184 232Z;M1184 232 L1189 232 Q1186 262 1174 282 Q1166 294 1152 296 Q1164 284 1169 270 Q1180 252 1184 232Z;M1184 232 L1189 232 Q1190 260 1182 284 Q1176 298 1164 304 Q1174 288 1177 272 Q1182 254 1184 232Z"/></path>
       </g>
 
       <!-- Red eye glow: a steady ember that flares and leaves a light trail -->

@@ -1,22 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420">
   <defs>
-    <filter id="grain" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" seed="7" stitchTiles="stitch"/>
-      <feColorMatrix values="0 0 0 0 0.33  0 0 0 0 0.26  0 0 0 0 0.18  0.9 0 0 0 -0.32"/>
-    </filter>
-    <filter id="stain" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.008" numOctaves="3" seed="13"/>
-      <feColorMatrix values="0 0 0 0 0.42  0 0 0 0 0.33  0 0 0 0 0.23  1.4 0 0 0 -0.62"/>
-    </filter>
-    <filter id="ink" x="-10%" y="-40%" width="120%" height="180%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="3" seed="3" result="n"/>
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-    <filter id="inkFine" x="-5%" y="-20%" width="110%" height="140%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="n"/>
-      <feDisplacementMap in="SourceGraphic" in2="n" scale="2" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
-    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3"/></filter>
+    
+    
+    
+    
+    
     <clipPath id="dFrame"><rect width="1200" height="420" rx="14"/></clipPath>
     <clipPath id="dDoor"><rect x="150" y="40" width="900" height="290"/></clipPath>
     <linearGradient id="dSky" x1="0" y1="0" x2="0" y2="1">
@@ -30,8 +18,8 @@
     <linearGradient id="dRay" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd8a0" stop-opacity="0.35"/><stop offset="1" stop-color="#ffd8a0" stop-opacity="0"/></linearGradient>
     <linearGradient id="dParch" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ece3d2"/><stop offset="1" stop-color="#d6c9b2"/></linearGradient>
     <radialGradient id="dVig" cx="0.5" cy="0.5" r="0.75"><stop offset="0.6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.6"/></radialGradient>
-    <filter id="dGlow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="10"/></filter>
-    <filter id="dEye" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="2"/></filter>
+    
+    
     <style>
       .flick { animation: flick 1.8s steps(5) infinite; }
       .drift { animation: wind linear infinite; }
@@ -47,8 +35,9 @@
         8% { opacity: 1 } 90% { opacity: 1 }
         100% { transform: translate(-900px,220px) rotate(-600deg); opacity: 0 }
       }
+      @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
     </style>
-  </defs>
+  <radialGradient id="sff6b46c"><stop offset="0" stop-color="#f6b46c"/><stop offset="0.5" stop-color="#f6b46c" stop-opacity="0.55"/><stop offset="1" stop-color="#f6b46c" stop-opacity="0"/></radialGradient><radialGradient id="sfff9a4a"><stop offset="0" stop-color="#ff9a4a"/><stop offset="0.5" stop-color="#ff9a4a" stop-opacity="0.55"/><stop offset="1" stop-color="#ff9a4a" stop-opacity="0"/></radialGradient><radialGradient id="sfffd8a0"><stop offset="0" stop-color="#ffd8a0"/><stop offset="0.5" stop-color="#ffd8a0" stop-opacity="0.55"/><stop offset="1" stop-color="#ffd8a0" stop-opacity="0"/></radialGradient><pattern id="grainPat" patternUnits="userSpaceOnUse" width="96" height="96"><image width="96" height="96" href="data:image/png;base64,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"/></pattern></defs>
   <g clip-path="url(#dFrame)">
     <rect width="1200" height="420" fill="#0b0908"/>
 
@@ -60,7 +49,7 @@
       <circle cx="600" cy="262" r="58" fill="url(#dSun)"/>
       <path fill="#a8503e" opacity="0.55" d="M150 262 L230 236 L300 248 L390 220 L470 244 L560 230 L650 250 L740 226 L830 244 L920 222 L1050 246 L1050 330 L150 330Z"/>
       <g class="fogD" opacity="0.55">
-        <ellipse cx="360" cy="262" rx="260" ry="14" fill="#f6b46c" opacity="0.45" filter="url(#dGlow)"/><ellipse cx="860" cy="258" rx="280" ry="12" fill="#f6b46c" opacity="0.4" filter="url(#dGlow)"/><ellipse cx="1260" cy="262" rx="260" ry="14" fill="#f6b46c" opacity="0.45" filter="url(#dGlow)"/><ellipse cx="1760" cy="258" rx="280" ry="12" fill="#f6b46c" opacity="0.4" filter="url(#dGlow)"/>
+        <ellipse cx="360" cy="262" rx="390.0" ry="21.0" fill="url(#sff6b46c)" opacity="0.45"/><ellipse cx="860" cy="258" rx="420.0" ry="18.0" fill="url(#sff6b46c)" opacity="0.4"/><ellipse cx="1260" cy="262" rx="390.0" ry="21.0" fill="url(#sff6b46c)" opacity="0.45"/><ellipse cx="1760" cy="258" rx="420.0" ry="18.0" fill="url(#sff6b46c)" opacity="0.4"/>
       </g>
       <path fill="#7a2f2c" d="M150 288 L260 268 L350 280 L460 262 L560 282 L680 270 L780 284 L860 266 L900 250 L960 246 L1010 262 L1050 270 L1050 330 L150 330Z"/>
       <!-- Castle on the far cliff -->
@@ -113,14 +102,14 @@
     <rect x="1046" y="0" width="22" height="420" fill="#1a110d"/>
     <path d="M0 330 L1200 330 L1200 420 L0 420Z" fill="url(#dFloor)"/>
     <line x1="0" y1="330" x2="-90" y2="420" stroke="#000" stroke-width="2" opacity="0.6"/><line x1="150" y1="330" x2="60" y2="420" stroke="#000" stroke-width="2" opacity="0.6"/><line x1="300" y1="330" x2="210" y2="420" stroke="#000" stroke-width="2" opacity="0.6"/><line x1="450" y1="330" x2="360" y2="420" stroke="#000" stroke-width="2" opacity="0.6"/><line x1="600" y1="330" x2="510" y2="420" stroke="#000" stroke-width="2" opacity="0.6"/><line x1="750" y1="330" x2="660" y2="420" stroke="#000" stroke-width="2" opacity="0.6"/><line x1="900" y1="330" x2="810" y2="420" stroke="#000" stroke-width="2" opacity="0.6"/><line x1="1050" y1="330" x2="960" y2="420" stroke="#000" stroke-width="2" opacity="0.6"/><line x1="1200" y1="330" x2="1110" y2="420" stroke="#000" stroke-width="2" opacity="0.6"/>
-    <ellipse cx="640" cy="350" rx="300" ry="16" fill="#ff9a4a" opacity="0.18" filter="url(#dGlow)"/>
+    <ellipse cx="640" cy="350" rx="450.0" ry="24.0" fill="url(#sfff9a4a)" opacity="0.18"/>
 
     
     <g transform="translate(240 34)">
       <line x1="0" y1="0" x2="0" y2="26" stroke="#0b0908" stroke-width="2"/>
       <g>
         <animateTransform attributeName="transform" type="rotate" values="-3 0 0;3 0 0;-3 0 0" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
-        <ellipse cx="0" cy="48" rx="46" ry="40" fill="#ff9a4a" opacity="0.28" filter="url(#dGlow)" class="flick"/>
+        <ellipse cx="0" cy="48" rx="69.0" ry="60.0" fill="url(#sfff9a4a)" opacity="0.28" class="flick"/>
         <rect x="-13" y="24" width="26" height="5" fill="#0b0908"/>
         <rect x="-16" y="28" width="32" height="38" rx="14" fill="#c4361f"/>
         <rect x="-10" y="33" width="20" height="28" rx="9" fill="#ffb066" opacity="0.6" class="flick"/>
@@ -133,7 +122,7 @@
       <line x1="0" y1="0" x2="0" y2="26" stroke="#0b0908" stroke-width="2"/>
       <g>
         <animateTransform attributeName="transform" type="rotate" values="-3 0 0;3 0 0;-3 0 0" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines="0.45 0 0.55 1;0.45 0 0.55 1"/>
-        <ellipse cx="0" cy="48" rx="46" ry="40" fill="#ff9a4a" opacity="0.28" filter="url(#dGlow)" class="flick"/>
+        <ellipse cx="0" cy="48" rx="69.0" ry="60.0" fill="url(#sfff9a4a)" opacity="0.28" class="flick"/>
         <rect x="-13" y="24" width="26" height="5" fill="#0b0908"/>
         <rect x="-16" y="28" width="32" height="38" rx="14" fill="#c4361f"/>
         <rect x="-10" y="33" width="20" height="28" rx="9" fill="#ffb066" opacity="0.6" class="flick"/>
@@ -144,7 +133,7 @@
     </g>
 
     <!-- The swordsman, facing us, cross-legged, reading a scroll open across his lap -->
-    <ellipse cx="470" cy="300" rx="120" ry="60" fill="#ffd8a0" opacity="0.16" filter="url(#dGlow)"><animate attributeName="opacity" values="0.1;0.22;0.1" dur="4s" repeatCount="indefinite"/></ellipse>
+    <ellipse cx="470" cy="300" rx="180.0" ry="90.0" fill="url(#sfffd8a0)" opacity="0.16"><animate attributeName="opacity" values="0.1;0.22;0.1" dur="4s" repeatCount="indefinite"/></ellipse>
     <g transform="translate(470 336) scale(1.15)" fill="#0b0908">
       <!-- scarf tails blowing to one side -->
       <path><animate attributeName="d" dur="0.9s" repeatCount="indefinite" values="M18 -100 C38 -104 58 -98 78 -104 C64 -92 42 -92 20 -94Z;M18 -100 C38 -96 58 -106 80 -98 C64 -88 42 -90 20 -94Z;M18 -100 C38 -104 58 -98 78 -104 C64 -92 42 -92 20 -94Z"/></path>
@@ -167,14 +156,14 @@
         <path><animate attributeName="d" dur="0.7s" repeatCount="indefinite" values="M13 -131 C22 -134 30 -130 40 -134 C34 -124 24 -124 14 -127Z;M13 -131 C22 -128 30 -132 42 -128 C34 -120 24 -122 14 -127Z;M13 -131 C22 -134 30 -130 40 -134 C34 -124 24 -124 14 -127Z"/></path>
         <path d="M-12 -126 C-10 -138 10 -138 12 -126 L10 -129 L4 -133 L0 -129 L-5 -133 L-10 -129Z"/>
         <!-- eyes, looking down at the scroll -->
-        <path d="M-9 -119 Q-6 -117.5 -3 -119" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" filter="url(#dEye)"/>
-        <path d="M3 -119 Q6 -117.5 9 -119" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" filter="url(#dEye)"/>
+        <path d="M-9 -119 Q-6 -117.5 -3 -119" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-opacity="0.4"/>
+        <path d="M3 -119 Q6 -117.5 9 -119" stroke="#fff" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-opacity="0.4"/>
         <path d="M-8.5 -119 Q-6 -118 -3.5 -119" stroke="#fff" stroke-width="0.9" fill="none"/>
         <path d="M3.5 -119 Q6 -118 8.5 -119" stroke="#fff" stroke-width="0.9" fill="none"/>
       </g>
       <!-- the scroll open across his lap -->
       <path d="M-50 -50 L50 -50 L60 -28 L-60 -28Z" fill="url(#dParch)"/>
-      <path d="M-50 -50 L50 -50 L60 -28 L-60 -28Z" filter="url(#grain)" opacity="0.5"/>
+      <path d="M-50 -50 L50 -50 L60 -28 L-60 -28Z" opacity="0.5" fill="url(#grainPat)"/>
       <g stroke="#1b1714" stroke-width="1" opacity="0.65">
         <line x1="-36" y1="-46" x2="-39.6" y2="-34"/><line x1="-24" y1="-45" x2="-26.400000000000002" y2="-35"/><line x1="-12" y1="-46" x2="-13.200000000000001" y2="-36"/><line x1="0" y1="-45" x2="0" y2="-34"/><line x1="12" y1="-46" x2="13.200000000000001" y2="-35"/><line x1="24" y1="-45" x2="26.400000000000002" y2="-36"/><line x1="36" y1="-46" x2="39.6" y2="-34"/>
       </g>
@@ -199,13 +188,13 @@
 
     <!-- The display scroll beside him: opens downward, then your details write themselves -->
     <g transform="translate(716 104) rotate(0)">
-      <ellipse cx="150" cy="102" rx="225" ry="142.79999999999998" fill="#ffd8a0" opacity="0.2" filter="url(#dGlow)"><animate attributeName="opacity" values="0.14;0.26;0.14" dur="4s" repeatCount="indefinite"/></ellipse>
+      <ellipse cx="150" cy="102" rx="337.5" ry="214.2" fill="url(#sfffd8a0)" opacity="0.2"><animate attributeName="opacity" values="0.14;0.26;0.14" dur="4s" repeatCount="indefinite"/></ellipse>
       <clipPath id="unroll"><rect x="-4" y="0" width="308" height="0">
         <animate attributeName="height" values="0;204;204;0;0" keyTimes="0;0.07;0.92;0.98;1" dur="12s" repeatCount="indefinite"/>
       </rect></clipPath>
       <g clip-path="url(#unroll)">
         <rect x="0" y="0" width="300" height="204" fill="url(#dParch)"/>
-        <rect x="0" y="0" width="300" height="204" filter="url(#grain)" opacity="0.55"/>
+        <rect x="0" y="0" width="300" height="204" opacity="0.55" fill="url(#grainPat)"/>
         <rect x="0" y="0" width="8" height="204" fill="#7a1810" opacity="0.8"/>
         <rect x="292" y="0" width="8" height="204" fill="#7a1810" opacity="0.8"/>
         <rect x="14" y="10" width="272" height="184" fill="none" stroke="#a3241b" stroke-opacity="0.45" stroke-width="1.1"/>
