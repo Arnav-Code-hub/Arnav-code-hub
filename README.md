@@ -23,7 +23,7 @@ I build Android apps and modern web experiences, from an encrypted safety vault 
 | **Home** | Pune, India |
 
 <p align="center">
-  <img src="./assets/divider-dash.svg" alt="Animated duel divider" width="100%"/>
+  <img src="./assets/divider-slash.svg" alt="Divider" width="100%"/>
 </p>
 
 <p align="center">
@@ -35,7 +35,7 @@ I build Android apps and modern web experiences, from an encrypted safety vault 
 </p>
 
 <p align="center">
-  <img src="./assets/divider-dash.svg" alt="Animated duel divider" width="100%"/>
+  <img src="./assets/divider-slash.svg" alt="Divider" width="100%"/>
 </p>
 
 <p align="center">
@@ -47,7 +47,7 @@ I build Android apps and modern web experiences, from an encrypted safety vault 
 </p>
 
 <p align="center">
-  <img src="./assets/divider-dash.svg" alt="Animated duel divider" width="100%"/>
+  <img src="./assets/divider-slash.svg" alt="Divider" width="100%"/>
 </p>
 
 <p align="center">
@@ -69,7 +69,7 @@ I build Android apps and modern web experiences, from an encrypted safety vault 
 > The war map and battle record are drawn from the real contribution calendar by `scripts/sync.mjs` and redrawn every day by a scheduled workflow.
 
 <p align="center">
-  <img src="./assets/divider-dash.svg" alt="Animated duel divider" width="100%"/>
+  <img src="./assets/divider-slash.svg" alt="Divider" width="100%"/>
 </p>
 
 <p align="center">
@@ -94,7 +94,7 @@ I build Android apps and modern web experiences, from an encrypted safety vault 
 - **WEBVERSE HACKATHON** · 2nd Place · Modern College · Placed second at the Webverse hackathon organised by Modern College.
 
 <p align="center">
-  <img src="./assets/divider-dash.svg" alt="Animated duel divider" width="100%"/>
+  <img src="./assets/divider-slash.svg" alt="Divider" width="100%"/>
 </p>
 
 <p align="center">
