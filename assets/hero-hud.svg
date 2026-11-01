@@ -295,7 +295,7 @@
         <line x1="-2.5" y1="-4" x2="2.5" y2="-4" stroke="#a3241b" stroke-width="1.4"/>
         <line x1="0" y1="-7" x2="0" y2="4" stroke="#a3241b" stroke-width="1.4"/>
       </g>
-      <text x="118" y="23" font-family="Georgia,'Times New Roman',serif" font-size="15" font-weight="700" letter-spacing="1" fill="#1b1714">×11</text>
+      <text x="118" y="23" font-family="Georgia,'Times New Roman',serif" font-size="15" font-weight="700" letter-spacing="1" fill="#1b1714">×10</text>
       <text x="100" y="38" font-family="Georgia,'Times New Roman',serif" font-size="8" letter-spacing="2" fill="#6b5f50">REPOS</text>
     </g>
 
